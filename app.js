@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser')
 
-var exampleRouter = require('./routes/router');
+var usermanageRouter = require('./routes/router');
+var loginregisterRouter = require('./routes/router_loginregister');
 
 var app = express();
 
@@ -32,7 +33,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // 路由配置
-app.use(exampleRouter);
+app.use(usermanageRouter);
+app.use(loginregisterRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
