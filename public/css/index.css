@@ -33,7 +33,29 @@ table tbody tr:nth-child(2n-1){
     z-index: 999;
     border-radius: 12px;
 }
+.search {
+    position: absolute;
+    top: 70px;
+    left: 700px;
+    text-decoration: none;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+    background-color: #0E88FF;
+    color: #fff;
+    z-index: 999;
+    border-radius: 12px;
+}
 .add a:hover{
     transform: scale(1.1);
     transition: all 0.6s;
+}
+.searchcondition {
+    position: absolute;
+    top: 70px;
+    height: 30px;
+    left: 548px;
+    z-index: 999;
 }

@@ -41,6 +41,35 @@ router.post('/add',function(req,res){
     })
 })
 
+// ==============处理搜索用户==================
+router.post('/search',function(req,res){
+    // User.find({value: req.body.value}).
+    // sort('name').
+    // exec(function(err, aa, count) {
+    //     if (err) {
+    //         return;
+    //     }
+    //     res.send(aa);
+    // });
+    User.find({name: req.body.value},function(err,doc){
+		if(err){
+			res.json({
+				status:'1',
+				msg:err.message
+			})
+		}else{
+			res.json({
+				status:'0',
+				msg:'',
+				result:{
+					count:doc.length,
+					list:doc
+				}
+			})
+		}
+	})
+})
+
 // =================渲染编辑用户信息页面============
 router.get('/edit',function(req,res){
     //1. 在客户端的列表中处理链接问题（需要有 id 参数）
